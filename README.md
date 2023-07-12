@@ -26,7 +26,7 @@
 
 # 🏖️🌍 blog-app <a name="about-project"></a>
 
-Welcome to **blog-app**
+Welcome to **blog-app**. Blog App is a fully functional blog website that shows a list of posts and empowers readers to interact with them by adding comments and likes.
 
 
 ## ERD diagram
@@ -73,10 +73,6 @@ Welcome to **blog-app**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  <!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="presentation"></a>
-
-- Not available yet.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
