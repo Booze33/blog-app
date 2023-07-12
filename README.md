@@ -96,7 +96,7 @@ Ensure you have Ruby installed on your system. You can check by running the code
 
 Clone or download the Beyond Borders repository to your local machine.
 ```sh
-  [git clone git@github.com:christianonoh/beyond-borders.git](https://github.com/Booze33/blog-app.git)
+  git clone git@github.com:christianonoh/beyond-borders.git](https://github.com/Booze33/blog-app.git
 ```
 Open your terminal and navigate to the cloned project directory.
 
