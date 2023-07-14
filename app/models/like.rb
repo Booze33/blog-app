@@ -5,6 +5,6 @@ class Like < ActiveRecord::Base
   after_save :update_post_likes_counter
 
   def update_post_likes_counter
-    post.update(likes_count: post.likes.count)
+    post.update(likes_counter: post.likes.count)
   end
 end
