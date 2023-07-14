@@ -30,14 +30,14 @@ RSpec.describe Post, type: :model do
 
   it 'increments the posts_counter of the author' do
     author = User.create(name: 'Jane Doe')
-    post = Post.create(title: 'Test Post', author: author)
+    post = Post.create(title: 'Test Post', author:)
 
     expect { post.increment_posts_counter }.to change { author.reload.posts_counter }.by(1)
   end
 
   it 'decrements the posts_counter of the author' do
     author = User.create(name: 'Jane Doe')
-    post = Post.create(title: 'Test Post', author: author)
+    post = Post.create(title: 'Test Post', author:)
 
     expect { post.decrement_posts_counter }.to change { author.reload.posts_counter }.by(-1)
   end
@@ -55,7 +55,7 @@ RSpec.describe Post, type: :model do
   it 'returns the 5 most recent comments' do
     post = subject
     post.save
-    10.times { |n| post.comments.create(author: author, text: "Comment #{n}") }
+    10.times { |n| post.comments.create(author:, text: "Comment #{n}") }
     recent_comments = post.recent_comments
     expect(recent_comments.length).to eq(5)
     expect(recent_comments.first.text).to eq('Comment 9')
