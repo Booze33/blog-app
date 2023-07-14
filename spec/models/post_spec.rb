@@ -27,4 +27,28 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 0
     expect(subject).to be_valid
   end
+
+  it 'increments the posts_counter of the author' do
+    author = User.create(name: 'Jane Doe')
+    post = Post.create(title: 'Test Post', author: author)
+
+    expect { post.increment_posts_counter }.to change { author.reload.posts_counter }.by(1)
+  end
+
+  it 'decrements the posts_counter of the author' do
+    author = User.create(name: 'Jane Doe')
+    post = Post.create(title: 'Test Post', author: author)
+
+    expect { post.decrement_posts_counter }.to change { author.reload.posts_counter }.by(-1)
+  end
+
+  it 'returns an empty array if there are no comments for the post' do
+    post = subject.save
+
+    recent_comments = subject.recent_comments
+
+    expect(recent_comments).to eq([])
+    expect(recent_comments).to be_an(Array)
+    expect(recent_comments.length).to eq(0)
+  end
 end
