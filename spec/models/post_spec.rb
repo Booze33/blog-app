@@ -43,7 +43,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'returns an empty array if there are no comments for the post' do
-    post = subject.save
+    subject.save
 
     recent_comments = subject.recent_comments
 
