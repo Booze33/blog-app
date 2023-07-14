@@ -37,5 +37,4 @@ RSpec.describe Post, type: :model do
     expect(recent_comments.first.text).to eq('Comment 9')
     expect(recent_comments.last.text).to eq('Comment 5')
   end
-  
 end
