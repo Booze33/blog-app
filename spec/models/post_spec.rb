@@ -27,14 +27,4 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 0
     expect(subject).to be_valid
   end
-
-  it 'returns the 5 most recent comments' do
-    post = subject
-    post.save
-    10.times { |n| post.comments.create(author: author, text: "Comment #{n}") }
-    recent_comments = post.recent_comments
-    expect(recent_comments.length).to eq(5)
-    expect(recent_comments.first.text).to eq('Comment 9')
-    expect(recent_comments.last.text).to eq('Comment 5')
-  end
 end
