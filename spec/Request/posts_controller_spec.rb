@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :request do
-  describe "GET index" do
-    it "returns a successful response" do
-      user = User.create(name: "John")
+  describe 'GET index' do
+    it 'returns a successful response' do
+      user = User.create(name: 'John')
       get user_posts_path(user)
       expect(response).to be_successful
     end
 
-    it "renders the index template" do
-      user = User.create(name: "John")
+    it 'renders the index template' do
+      user = User.create(name: 'John')
       get user_posts_path(user)
       expect(response).to render_template(:index)
     end
