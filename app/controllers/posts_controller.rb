@@ -15,9 +15,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.author = @user # Associate the post with the current user
+  
     if @post.save
       flash[:success] = 'New post successfully added!'
-      redirect_to user_posts_path
+      redirect_to user_post_path(@user, @post) # Redirect to the post show page
     else
       flash.now[:error] = 'Post creation failed'
       render :new
