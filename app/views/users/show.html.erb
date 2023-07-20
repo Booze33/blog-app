@@ -1,1 +1,18 @@
-<h1>Here is the info for a particular post</h1>
+<div class="user-show">
+  <div class="user-cont">
+    <div>
+      <img src="https://user-images.githubusercontent.com/37116322/222183427-3450696b-429a-4e9a-9e19-48bbe4b48edf.png" alt="profile" class="user-pic">
+    </div>
+    <div class="user-info">
+      <h2><%= @user.name %></h2>
+      <div class="posts-counter">
+        <p>Number of posts: <%= @user.posts_counter %></p>
+      </div>
+    </div>
+  </div>
+  <div class="user-cont user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+    <%= link_to 'Posts', "/users/#{@user.id}/posts", class: 'post-link' %>
+  </div>
+</div>

@@ -1,1 +1,16 @@
-<h1>Here is a list of all posts for a user</h1>
+<div class="user-page">
+  <% @users.each do |user| %>
+    <div class="user-cont">
+      <div>
+        <img src="https://user-images.githubusercontent.com/37116322/222183427-3450696b-429a-4e9a-9e19-48bbe4b48edf.png" alt="profile" class="user-pic">
+      </div>
+      <div class="user-info">
+        <h2><%= user.name %></h2>
+        <div class="posts-counter">
+          <p>Number of posts: <%= user.posts_counter %></p>
+          <%= link_to 'View', "/users/#{user.id}", class: 'post-link' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
