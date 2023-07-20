@@ -11,4 +11,7 @@
       <p><%= comment.author.name %>: <%= comment.text %></p>
     <% end %>
   </div>
+  <button>
+    <%= link_to 'Add Comment', "/users/#{@post.author.id}/posts/#{@post.id}/comments/new", class: 'post-link' %>
+  </button>
 </div>

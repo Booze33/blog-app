@@ -1,0 +1,5 @@
+<%= form_with(model: current_user.posts.build, url: user_posts_path(@user), local: true) do |form| %>
+  <%= form.text_field :title, placeholder: 'Title' %>
+  <%= form.text_area :text, placeholder: 'Post content' %>
+  <%= form.submit 'Create Post' %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= form_with(model: current_user.comments.build, url: user_post_comments_path(@user, @post), local: true) do |form| %>
+  <%= form.text_area :text, placeholder: 'Your comment' %>
+  <%= form.submit 'Create Comment' %>
+<% end %>
