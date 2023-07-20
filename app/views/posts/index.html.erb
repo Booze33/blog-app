@@ -1,1 +1,32 @@
-<h1>Here is a list of all posts for a user</h1>
+<div class="user-show">
+  <div class="user-cont">
+    <div>
+      <img src="https://user-images.githubusercontent.com/37116322/222183427-3450696b-429a-4e9a-9e19-48bbe4b48edf.png" alt="profile" class="user-pic">
+    </div>
+    <div class="user-info">
+      <h2><%= @user.name %></h2>
+      <div class="posts-counter">
+        <p>Number of posts: <%= @user.posts_counter %></p>
+      </div>
+    </div>
+  </div>
+  <div class="user-cont user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <div class="post-cont-container">
+    <% @posts.each do  |post| %>
+      <div class="post-cont">
+        <h3>Post #<%= post.id %></h3>
+        <p class="post-text"><%= post.text %></p>
+        <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+        <%= link_to 'View', "/users/#{@user.id}/posts/#{post.id}", class: 'post-link' %>
+      </div>
+      <div class="comment-cont">
+        <%post.recent_comments.each do |comment| %>
+          <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

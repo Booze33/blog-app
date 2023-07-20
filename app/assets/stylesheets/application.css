@@ -1,15 +1,96 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin: 2rem;
+  padding: 6rem;
+  background-color: #2b2726;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.user-cont {
+  width: 55vw;
+  height: 11rem;
+  background-color: #f0ec8b;
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 3px solid #403541;
+  color: #403541;
+}
+
+.user-cont:nth-child(odd) {
+  background-color: #8e43ed;
+  color: #fff;
+}
+
+.user-pic {
+  width: 14rem;
+  height: 10rem;
+  margin-right: 2rem;
+}
+
+.user-info {
+  display: flex;
+}
+
+.posts-counter {
+  margin: 2rem 0 0 3rem;
+  padding: 0;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
+
+.post-link {
+  text-decoration: none;
+  margin-left: 90%;
+  color: #403541;
+}
+
+.user-bio {
+  flex-direction: column;
+}
+
+.post-cont-container {
+  background-color: #8e43ed;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 8px;
+  border: 3px solid #403541;
+}
+
+.post-cont {
+  width: 50vw;
+  height: 9rem;
+  background-color: #f0ec8b;
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  border: 3px solid #403541;
+  color: #403541;
+}
+
+.comment-cont {
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+}
+
+.post-text {
+  margin-top: -1rem;
+}
+
+.comments-count {
+  font-size: 15px;
+}
