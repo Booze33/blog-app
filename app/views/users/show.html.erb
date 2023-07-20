@@ -13,5 +13,6 @@
   <div class="user-cont user-bio">
     <h3>Bio</h3>
     <p><%= @user.bio %></p>
+    <%= link_to 'Posts', "/users/#{@user.id}/posts", class: 'post-link' %>
   </div>
 </div>
