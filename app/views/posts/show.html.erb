@@ -7,11 +7,17 @@
     <p><%= @post.text %><p>
   </div>
   <div class="post-cont-container">
-    <% @post.comments.each do |comment| %>
-      <p><%= comment.author.name %>: <%= comment.text %></p>
+  <% if current_user.likes?(@post) %>
+    <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :delete, local: true) do |f| %>
+      <%= f.submit 'Unlike', class: 'like-button' %>
     <% end %>
-  </div>
-  <button>
-    <%= link_to 'Add Comment', "/users/#{@post.author.id}/posts/#{@post.id}/comments/new", class: 'post-link' %>
+  <% else %>
+    <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post, local: true) do |f| %>
+      <%= f.submit 'Like', class: 'like-button' %>
+    <% end %>
+  <% end %>
+</div>
+  <button class="btn">
+    <%= link_to 'Add Comment', "/users/#{@post.author.id}/posts/#{@post.id}/comments/new", class: 'btn-primary' %>
   </button>
 </div>

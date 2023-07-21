@@ -1,11 +1,10 @@
 <div class="new-post">
   <%= form_with model: @post, url: user_posts_path(@user), local: true do |f| %>
+    <h2 class="comments-header">Create New Posts</h2>
     <div class="form-group">
-      <%= f.label :title %>
       <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
     </div>
     <div class="form-group">
-      <%= f.label :text %>
       <%= f.text_area :text, class: "form-control", placeholder: "Post content" %>
     </div>
     <%= f.hidden_field :comments_counter, value: 0 %>

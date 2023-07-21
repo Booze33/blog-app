@@ -1,4 +1,9 @@
-<%= form_with(model: current_user.comments.build, url: user_post_comments_path(@user, @post), local: true) do |form| %>
-  <%= form.text_area :text, placeholder: 'Your comment' %>
-  <%= form.submit 'Create Comment' %>
-<% end %>
+<div>
+  <h2 class="comments-header">Add comments</h2>
+  <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@user, @post), local: true) do |form| %>
+    <div class="create-comment">
+      <%= form.text_area :text, placeholder: 'Your comment', class: "form-control-2" %>
+      <%= form.submit 'Create Comment', class: "form-btn"%>
+    </div>
+  <% end %>
+</div>
