@@ -13,6 +13,9 @@
   <div class="user-cont user-bio">
     <h3>Bio</h3>
     <p><%= @user.bio %></p>
+    <button class="btn-2">
+       <%= link_to "New Post", new_user_post_path, class: 'btn-primary btn_2' %>
+    </button>
   </div>
   <div class="post-cont-container">
     <% @posts.each do  |post| %>
