@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user_and_post, only: [:new, :create]
+  before_action :set_user_and_post, only: %i[new create]
 
   def new
     @comment = @post.comments.build

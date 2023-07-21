@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_user, only: %i[index new create]
   before_action :set_post, only: [:show]
 
   def index
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = @user
-  
+
     if @post.save
       flash[:success] = 'New post successfully added!'
       redirect_to user_post_path(@user, @post)

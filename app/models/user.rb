@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   end
 
   def likes?(post)
-    likes.exists?(post: post)
+    likes.exists?(post:)
   end
 end
