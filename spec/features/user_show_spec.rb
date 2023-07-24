@@ -1,5 +1,3 @@
-# spec/features/user_show_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe 'User show page', type: :feature do
@@ -23,7 +21,6 @@ RSpec.describe 'User show page', type: :feature do
   end
 
   it "displays the number of posts the user has written" do
-    puts user.posts.count
     expect(page).to have_content("Number of posts: #{user.posts.count}")
   end
 

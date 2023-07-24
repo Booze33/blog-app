@@ -1,5 +1,3 @@
-# spec/features/post_index_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe 'User post index page', type: :feature do
@@ -36,7 +34,7 @@ RSpec.describe 'User post index page', type: :feature do
   it "displays the first comments on a post and how many comments it has" do
     posts.each do |post|
       expect(page).to have_content("Comments: #{post.comments.count}")
-      post.comments.each do |comment| # Change from post.comments.recent to post.comments
+      post.comments.each do |comment|
         expect(page).to have_content(comment.author.name)
         expect(page).to have_content(comment.text)
       end
