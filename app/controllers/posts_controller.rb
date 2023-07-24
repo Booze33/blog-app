@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @posts = @user.includes(:comments).all
+    @posts = Post.includes(:comments).all
   end
 
   def show

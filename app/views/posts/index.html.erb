@@ -27,7 +27,7 @@
       </div>
       <div class="comment-cont">
         <%post.recent_comments.each do |comment| %>
-          <p><%= comment.author.name %>: <%= comment.text %></p>
+          <p class="pagination"><%= comment.author.name %>: <%= comment.text %></p>
         <% end %>
       </div>
     <% end %>
