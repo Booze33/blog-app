@@ -15,4 +15,10 @@
     <p><%= @user.bio %></p>
     <%= link_to 'Posts', "/users/#{@user.id}/posts", class: 'post-link' %>
   </div>
+  <div class="user-cont user-posts">
+  <h3>Recent Posts</h3>
+  <% @user.posts.limit(3).each do |post| %>
+    <p><%= post.title %></p>
+  <% end %>
+</div>
 </div>
