@@ -20,7 +20,7 @@ RSpec.describe 'User post index page', type: :feature do
     expect(page).to have_content(user.name)
   end
 
-  it "displays the number of posts the user has written" do
+  it 'displays the number of posts the user has written' do
     expect(page).to have_content("Number of posts: #{user.posts.count}")
   end
 
@@ -31,7 +31,7 @@ RSpec.describe 'User post index page', type: :feature do
     end
   end
 
-  it "displays the first comments on a post and how many comments it has" do
+  it 'displays the first comments on a post and how many comments it has' do
     posts.each do |post|
       expect(page).to have_content("Comments: #{post.comments.count}")
       post.comments.each do |comment|
@@ -41,14 +41,14 @@ RSpec.describe 'User post index page', type: :feature do
     end
   end
 
-  it "displays how many likes a post has" do
+  it 'displays how many likes a post has' do
     posts.each do |post|
       expect(page).to have_content("Likes: #{post.likes_counter}")
     end
   end
 
   it "redirects to a post's show page when clicking on a post" do
-    click_link "View", href: user_post_path(user, posts.first)
+    click_link 'View', href: user_post_path(user, posts.first)
     expect(page).to have_content('Add Comment')
   end
 end
