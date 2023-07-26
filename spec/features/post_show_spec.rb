@@ -19,5 +19,16 @@ RSpec.describe 'Post show page', type: :feature do
   it "displays how many likes the post has" do
     expect(page).to have_content("Likes: 0")
   end
- 
+  it "displays the post body" do
+    expect(page).to have_content('Post content')
+  end
+  it "displays the username of each commenter" do
+    expect(page).to have_content(user.name, count: 1)
+  end
+  it "displays the comment each commenter left" do
+    expect(page).to have_content('Comments: 2')
+  end
+  it "displays a button to add a comment" do
+    expect(page).to have_link('Add Comment', href: new_user_post_comment_path(user, post))
+  end
 end
