@@ -125,6 +125,11 @@ Open your browser and navigate to:
 - Twitter: [@twitterhandle](https://twitter.com/Tebe95645832)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tebe-tisloh-847956225)
 
+👤 **Nabeel Ahmed**
+
+- GitHub: [@Metaverse-Nabeel](https://github.com/Metaverse-Nabeel)
+- LinkedIn: [@Nabeel129](https://www.linkedin.com/in/Nabeel129)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
