@@ -129,6 +129,11 @@ p {
   color: #f0ec8b;
 }
 
+.Head {
+  color: #8e43ed;
+  font-weight: bold;
+}
+
 .form-control {
   width: 30vw;
   height: 3rem;
@@ -171,4 +176,37 @@ p {
 
 .comments-header {
   color: #f0ec8b;
+}
+
+.Link {
+  color: #f0ec8b;
+  margin: 0.5rem;
+}
+
+.form-btn-2 {
+  background-color: #8e43ed;
+  padding: 0.5rem;
+  color: #f0ec8b;
+  border-radius: 3px;
+  border: none;
+}
+
+.form-label {
+  color: #8e43ed;
+  font-size: 19px;
+}
+
+.form-label-2 {
+  color: #f0ec8b;
+  font-size: 19px;
+}
+
+.form-password {
+  width: 20vw;
+  height: 2.3rem;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  background-color: #f0ec8b;
+  border-radius: 8px;
+  border: none;
 }
