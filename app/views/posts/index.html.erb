@@ -30,6 +30,9 @@
       <div class="comment-cont">
         <%post.recent_comments.each do |comment| %>
           <p class="pagination"><%= comment.author.name %>: <%= comment.text %></p>
+          <% if can? :destroy, comment %>
+            <%= button_to 'Delete', user_post_comment_path(@user, post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
         <% end %>
       </div>
     <% end %>

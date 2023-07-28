@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_user_and_post, only: %i[new create]
+  load_and_authorize_resource
+  before_action :set_user_and_post, only: %i[destroy]
+  before_action :set_user_and_post_for_new, only: %i[new create]
 
   def new
     @comment = @post.comments.build
@@ -16,9 +18,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    flash[:success] = 'Comment successfully deleted'
+    redirect_to user_post_path(@user, @post)
+  end
+
   private
 
   def set_user_and_post
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def set_user_and_post_for_new
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
   end
