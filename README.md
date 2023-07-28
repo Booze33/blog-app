@@ -69,6 +69,7 @@ Welcome to **blog-app**. Blog App is a fully functional blog website that shows 
 - Like posts to show appreciation for your favorite travel stories.
 - User-friendly and responsive interface for seamless browsing on different devices.
 - Simple and intuitive navigation for easy exploration of the blog.
+- Added Authorization Features.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

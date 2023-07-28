@@ -6,6 +6,9 @@
     </div>
     <p><%= @post.text %><p>
   </div>
+  <% if can? :destroy, @post %>
+  <%= button_to 'Delete', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <% end %>
   <div class="post-cont-container">
   <% if current_user.likes?(@post) %>
     <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :delete, local: true) do |f| %>
