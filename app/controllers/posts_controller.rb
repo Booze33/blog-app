@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user, only: %i[index new create]
   before_action :set_post, only: [:show]
 
