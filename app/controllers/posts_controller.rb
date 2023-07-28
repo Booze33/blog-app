@@ -1,10 +1,22 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: %i[index new create]
   before_action :set_post, only: [:show]
+  before_action :set_default_response_format, only: [:index]
 
   def index
-    @posts = Post.includes(:comments).all
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      @posts = @user.posts.includes(:comments)
+    else
+      @posts = Post.includes(:comments).all
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
@@ -49,6 +61,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_default_response_format
+    request.format = :json if request.format.html?
   end
 
   def post_params
