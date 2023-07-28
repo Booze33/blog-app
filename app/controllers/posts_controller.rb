@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
-  
+
     if @post.nil?
       flash[:error] = 'Post not found'
       redirect_to root_path
