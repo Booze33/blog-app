@@ -8,7 +8,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = @post.author
+    @post = Post.find_by(id: params[:id])
+  
+    if @post.nil?
+      flash[:error] = 'Post not found'
+      redirect_to root_path
+    else
+      @user = @post.author
+    end
   end
 
   def new
@@ -26,6 +33,12 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Post creation failed'
       render :new
     end
+  end
+
+  def destroy
+    @post.destroy
+    flash[:success] = 'Post successfully deleted'
+    redirect_to user_posts_path(user_id: current_user.id)
   end
 
   private

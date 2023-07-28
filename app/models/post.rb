@@ -8,9 +8,14 @@ class Post < ActiveRecord::Base
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   after_save :increment_posts_counter
+  before_destroy :decrement_posts_counter
 
   def increment_posts_counter
     author.increment!(:posts_counter)
+  end
+
+  def decrement_posts_counter
+    author.decrement!(:posts_counter)
   end
 
   def recent_comments
