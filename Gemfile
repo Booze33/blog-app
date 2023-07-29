@@ -46,6 +46,12 @@ gem 'devise'
 
 gem 'cancancan', '~> 3.1'
 
+gem 'rswag'
+
+gem 'rswag-ui'
+
+gem 'rswag-specs'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
