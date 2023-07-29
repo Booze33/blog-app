@@ -70,6 +70,7 @@ Welcome to **blog-app**. Blog App is a fully functional blog website that shows 
 - User-friendly and responsive interface for seamless browsing on different devices.
 - Simple and intuitive navigation for easy exploration of the blog.
 - Added Authorization Features.
+- Added API End point Features.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
