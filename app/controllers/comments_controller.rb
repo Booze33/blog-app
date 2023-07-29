@@ -3,6 +3,13 @@ class CommentsController < ApplicationController
   before_action :set_user_and_post, only: %i[destroy]
   before_action :set_user_and_post_for_new, only: %i[new create]
 
+  def index_api
+    @comments = Comment.where(post_id: params[:post_id])
+    respond_to do |format|
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = @post.comments.build
   end
