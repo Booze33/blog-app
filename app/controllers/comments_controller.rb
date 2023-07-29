@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def index_api
     @comments = Comment.where(post_id: params[:post_id])
     respond_to do |format|
-      format.json { render json:@comments }
+      format.json { render json: @comments }
     end
   end
 
