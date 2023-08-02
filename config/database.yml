@@ -24,9 +24,6 @@ default: &default
 development:
   <<: *default
   database: blog_app_development
-  username: postgres
-  password: Yakubu2020
-  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
